@@ -1,6 +1,12 @@
 pipeline {
     agent any
        stages {
+         stage('print') {
+            steps {
+                echo "${params.cron}"
+                echo "${params.choice}"
+            }
+        }
         stage('Hello') {
             steps {
                 echo 'Hello World ${params.TEST}'
