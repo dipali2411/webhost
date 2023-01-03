@@ -3,13 +3,12 @@ pipeline {
        stages {
          stage('print') {
             steps {
-                echo "${params.cron}"
-                echo "${params.choice}"
+              sh label: 'FetchGroups', script: '''cat name.txt '''
             }
         }
         stage('Hello') {
             steps {
-                echo 'Hello World ${params.TEST}'
+                echo 'Hello World'
             }
         }
     }
