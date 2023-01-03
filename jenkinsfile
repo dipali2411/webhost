@@ -1,10 +1,12 @@
 pipeline {
     agent any
-
-    stages {
+    parameters {
+  string description: 'test', name: 'TEST', trim: true
+}
+       stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                echo 'Hello World params.TEST'
             }
         }
     }
