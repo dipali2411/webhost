@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    parameters {
-     string description: 'cron', name: 'cron'
-     }
-     
+
       stages {
         stage('Hello') {
             steps {
@@ -11,10 +8,5 @@ pipeline {
             }
         }
         
-        stage('print'){
-           steps{
-               echo '${params.cron}'
-               }
-        }
      }
 }
